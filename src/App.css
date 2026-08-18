@@ -1,108 +1,35 @@
-.App {
-  display: flex; /* Add display: flex to the App container */
-  justify-content: center; /* Center horizontally within the App container */
-  align-items: center; /* Center vertically within the App container */
-}
+@font-face { font-family: Poppins; src: url('./Poppins-Regular.ttf'); font-display: swap; }
 
-.body {
-  width: fit-content;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url(./Poppins-Regular.ttf);
-}
-
-.App-header {
-  display: flex;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 80px;
-  background-color: #4f4f4f;
-  display: flex;
-  justify-content: space-between; /* Space between the two content sections */
-  align-items: center; /* Vertically center items */  
-}
-
-.sahyog-logo{
-  width: 60px;
-  height: 60px;
-  margin-left: 20px;
-  margin-top: 10px;
-  float: left;
-}
-
-.title {
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  font-size: 28px;
-  font-family: "Poppins";
-  font-weight: 600;
-  line-height: 36px;
-  margin-right: 15px;
-}
-
-.BannerCard {
-  margin-top: 20px;
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
-  width: 50%;
-  min-width: 585px;
-  height: 450px;
-  background-color: #c3f2cb;
-  border-radius: 16px;
-  box-shadow: 0px 4px 32px rgba(51,51,51,0.1);
-}
-
-.header-item{
-  margin-right: 15px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-family: "Poppins";
-  font-weight: 600;
-  line-height: 36px;
-}
-
-.BannerCardTitle{
-  color: #030303;
-  font-size: 48px;
-  font-family: "Poppins";
-  font-weight: 600;
-  line-height: 62px;
-}
-
-.card-item{
-  margin: 28px;
-  color: #030303;
-  font-size: 20px;
-  font-family: "Poppins";
-  font-weight: 600;
-}
-
-.left-header {
-  display: flex;
-  align-items: center; /* Vertically center items */
-}
-
-.right-header {
-  display: flex;
-}
-
-.banner-left{
-  margin-left: 50px;
-  margin-top: 20px;
-  width: 40%;
-  /* height: 400px;
-  background-color: #c3f2cb;
-  border-radius: 16px;
-  box-shadow: 0px 4px 32px rgba(51,51,51,0.1); */
-}
-
-.banner-right{
-  width: 40%;
-}
+:root { --ink: #172b36; --muted: #61727b; --line: #dbe6e4; --mint: #bfead5; --deep: #123744; --paper: #f7fbfa; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Poppins, system-ui, sans-serif; }
+a { color: inherit; }
+.site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.site-header { display: flex; justify-content: space-between; align-items: center; width: min(1180px, calc(100% - 40px)); min-height: 82px; margin: 0 auto; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--deep); font-size: 21px; font-weight: 700; text-decoration: none; }
+.brand img { width: 42px; height: 42px; object-fit: contain; }
+nav { display: flex; flex-wrap: wrap; gap: 22px; }
+nav a { color: var(--muted); font-size: 14px; font-weight: 700; text-decoration: none; }
+nav a:hover, nav a:focus-visible { color: var(--deep); }
+main { flex: 1; }
+.page-width { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+.hero-section { padding: 70px 0 92px; }
+.eyebrow { margin: 0 0 14px; color: #168061; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.hero-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); gap: 70px; align-items: end; }
+h1 { max-width: 720px; margin: 0; font-size: clamp(46px, 7vw, 82px); font-weight: 700; letter-spacing: -.06em; line-height: 1.02; }
+.lead { max-width: 690px; margin: 24px 0 0; color: var(--muted); font-size: 18px; line-height: 1.75; }
+.pillar-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.pillar-list li { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 15px; }
+.pillar-list span, .stage-list span { color: #168061; font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+.content-page { padding: 70px 0 96px; }
+.content-page h1 { font-size: clamp(38px, 5.5vw, 62px); }
+.narrow { max-width: 780px; }
+.detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 45px; }
+.detail-grid article { padding: 24px; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
+.detail-grid h2, .stage-list h2 { margin: 0; font-size: 21px; letter-spacing: -.035em; }
+.detail-grid p, .stage-list p { margin: 10px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.stage-list { display: grid; gap: 0; margin-top: 44px; border-top: 1px solid var(--line); }
+.stage-list article { display: grid; grid-template-columns: 62px 1fr; gap: 14px; padding: 25px 0; border-bottom: 1px solid var(--line); }
+.action-link { display: inline-flex; margin-top: 34px; padding: 13px 18px; border-radius: 8px; background: var(--deep); color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; }
+footer { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+@media (max-width: 760px) { .site-header { min-height: 72px; } .hero-layout, .detail-grid { grid-template-columns: 1fr; gap: 34px; } .hero-section, .content-page { padding: 48px 0 68px; } nav { gap: 13px; } nav a { font-size: 12px; } }
