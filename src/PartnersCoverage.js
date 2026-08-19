@@ -1,45 +1,24 @@
-import React, { useState } from 'react';
-import USAMap from "react-usa-map";
-import stateData from "./CarrierStateMapping.csv"
+const stages = [
+  ['Discover', 'Find participating brands, logistics providers, and parcel resources from one shared starting point.'],
+  ['Describe', 'Use consistent locations and protocols to communicate the services available across the network.'],
+  ['Coordinate', 'Create a clear place for routing and settlement conversations as delivery flows cross organizations.'],
+];
 
 function PartnersCoverage() {
-
-  const csvString = stateData; // Import the CSV as a string
-  const lines = csvString.split('\n');
-
-  const originalData = {};
-
-  for (const line of lines) {
-    const [key, value] = line.split(',');
-    originalData[key] = value;
-    console.log(key + " : " + value);
-  }
-
-  console.log("OGDATA" + originalData);
-  // Initialize the state for the custom configurations
-  const [customConfig, setCustomConfig] = useState({});
-
-  // Define the statesCustomConfig function using the customConfig state
-  const statesCustomConfig = () => {
-    return customConfig;
-  };
-
-  // Define the mapHandler function to handle map clicks and update the state
-  const mapHandler = (event) => {
-    // Get the name of the clicked state
-    const stateName = event.target.dataset.name;
-
-    // Update the customConfig state to change the color of the clicked state
-    setCustomConfig(prevConfig => ({
-      ...prevConfig,
-      [stateName]: { fill: "navy" } // Change the color to navy (or any desired color)
-    }));
-  };
-
   return (
-    <div>
-      <USAMap customize={statesCustomConfig()} onClick={mapHandler} />
-    </div>
+    <section className="content-page page-width">
+      <p className="eyebrow">Network model</p>
+      <h1>Designed around how parcel services connect.</h1>
+      <p className="lead">The page previously presented a coverage map without a reliable data source. This concept view keeps the focus on the network model rather than implying live coverage information.</p>
+      <div className="stage-list">
+        {stages.map(([title, description], index) => (
+          <article key={title}>
+            <span>0{index + 1}</span>
+            <div><h2>{title}</h2><p>{description}</p></div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
